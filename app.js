@@ -31,5 +31,5 @@ app.get('/restaurants/:id', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`It's work on the localhost:${port}`)
+  console.log(`It's listening on the localhost:${port}`)
 })
