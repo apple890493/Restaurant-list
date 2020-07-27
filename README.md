@@ -26,4 +26,4 @@
 - Express: v4.17.1
 - Express-Handlebars: 5.0.0
 - Body-parser": 1.19.0
-- Mongoose": 5.9.25"# Resturant-list-with-DB" 
+- Mongoose": 5.9.25"
