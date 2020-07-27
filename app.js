@@ -25,8 +25,6 @@ app.use(express.static('public'), bodyParser.urlencoded({ extended: true }))
 // 搜尋
 app.get('/search', (req, res) => {
   const keyword = req.query.keyword
-  console.log(keyword)
-
   Restaurant.find({ name: { $regex: keyword, $options: "i" } })
     .lean()
     .then(restaurant => {
@@ -72,9 +70,8 @@ app.get('/restaurants/:id/edit', (req, res) => {
 app.post('/restaurants', (req, res) => {
   const data = req.body
   let image = req.body.image
-  console.log('image', image)
   if (!image.length) {
-    image = 'https://i.imgur.com/GqXygaL.jpg'
+    image = 'https://i.imgur.com/kXNxrm9.jpg'
   } else {
     image = image
   }
@@ -105,14 +102,14 @@ app.post('/restaurants/:id/edit', (req, res) => {
           restaurant[i] = item[i]
         }
         restaurant.save()
-      })
+      }
+    })
     .then(() => res.redirect(`/restaurants/${storeId}/edit`), { dataError })
     .catch(error => res.redirect(`/restaurants/${storeId}/edit`))
 })
 
 app.post('/restaurants/:id/delete', (req, res) => {
   const storeId = req.params.id
-  console.log(storeId)
   return Restaurant.findById(storeId)
     .then(data => data.remove())
     .then(() => res.redirect('/'))
