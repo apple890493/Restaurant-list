@@ -1,10 +1,8 @@
 const mongoose = require('mongoose')
-const resturantInfo = require('../info')
-const resturantData = require('../../resturant.json').results
+const restaurantInfo = require('../info')
+const restaurantData = require('../../restaurant.json').results
 
-console.log(resturantData)
-
-mongoose.connect('mongodb://localhost/resturant-list', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost/restaurant-list', { useNewUrlParser: true, useUnifiedTopology: true })
 
 const db = mongoose.connection
 
@@ -13,8 +11,8 @@ db.on('error', () => {
 })
 db.once('open', () => {
   console.log('mongodb connected!')
-  resturantData.forEach(data =>
-    resturantInfo.create({
+  restaurantData.forEach(data => {
+    restaurantInfo.create({
       name: `${data.name}`,
       name_en: `${data.name_en}`,
       category: `${data.category}`,
@@ -24,7 +22,7 @@ db.once('open', () => {
       google_map: `${data.google_map}`,
       rating: `${data.rating}`,
       description: `${data.description}`,
-    }))
+    })
+  })
   console.log('done!')
 })
-

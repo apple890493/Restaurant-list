@@ -59,6 +59,15 @@ header {
   font-size: 0.8rem;
 }
 
+.restaurant-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.restaurant-footer button{
+  font-size: 12px;
+}
+
 .restaurant-show-title {
   position: relative;
   top: -100px;
