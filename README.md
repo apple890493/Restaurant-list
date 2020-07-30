@@ -1,8 +1,6 @@
 # 餐廳清單
 以Express & Node.js打造的餐廳列表,提供用戶擁有自己的美食口袋名單
 
-![image](https://github.com/apple890493/Resturant-list/blob/master/2-3A6.JPG)
-
 ## 功能列表
 - 可以以餐廳名稱搜尋
 - 檢視餐廳詳細資訊包含類別、地址、電話、評分、圖片及 Google Map
@@ -26,4 +24,4 @@
 - Express: v4.17.1
 - Express-Handlebars: 5.0.0
 - Body-parser": 1.19.0
-- Mongoose": 5.9.25"
+- Mongoose": 5.9.25"# Resturant-list-with-DB" 
